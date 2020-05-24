@@ -1,10 +1,6 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Portfolio from "./components/Portfolio";
 import App from "./App";
 
 import {
@@ -18,8 +14,8 @@ import { theme } from "./components/ultils/Theme";
 const Routes = () => {
   return (
     <div className="App">
-      {/* <Route exact path="/" component={Contact} /> */}
       <Route
+        exact
         path="/"
         component={() => (
           <MuiThemeProvider theme={createMuiTheme(theme)}>
@@ -27,8 +23,8 @@ const Routes = () => {
           </MuiThemeProvider>
         )}
       />
-      <Route path="/about" component={About} />
-      {/* <Route path="*" component={Portfolio} /> */}
+
+      <Route path="/*" component={() => 404} />
     </div>
   );
 };

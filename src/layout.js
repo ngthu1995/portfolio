@@ -25,7 +25,7 @@ export const useStyles = makeStyles({
   },
   container: {
     margin: "0 auto",
-    padding: "150x 0",
+    padding: "100px 0",
     ["@media (min-width:780px)"]: {
       width: 780,
     },
