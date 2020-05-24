@@ -1,40 +1,43 @@
 import React from "react";
 
-import {
-  Button,
-  FormControl,
-  FormHelperText,
-  TextField,
-  Grid,
-} from "@material-ui/core";
+import { Typography, Grid, Avatar } from "@material-ui/core";
+
+import { useStyles } from "./styles";
 
 const About = () => {
+  const classes = useStyles();
   return (
-    <Grid container>
-      {/* <Grid item>
-        <FormControl>
-          <TextField label="First name" />
-        </FormControl>
-        <FormControl>
-          <TextField label="Last name" />
-        </FormControl>
-        <FormControl>
-          <TextField label="Email" />
-        </FormControl>
-        <FormControl>
-          <TextField
-            id="outlined-multiline-static"
-            label="How can I help you?"
-            multiline
-            rows={4}
-            defaultValue=""
+    <>
+      <Typography variant="h4" gutterBottom>
+        About Me
+      </Typography>
+      <Grid
+        container
+        spacing={2}
+        justify="center"
+        direction="column"
+        alignItems="center"
+      >
+        <Grid item>
+          <Avatar
+            alt="profile picture"
+            src="images/avatar.jpg"
+            className={classes.image}
           />
-        </FormControl>
-        <Button onClick={(value) => console.log(value)} color="primary">
-          Send Message
-        </Button>
-      </Grid> */}
-    </Grid>
+        </Grid>
+        <Grid item className={classes.text}>
+          <Typography variant="body1">
+            Hi, I am Tina, a web developer with background of 5 years experience
+            in design interested in web development. I have some experience
+            building graphic intensive web applications using ReactJS and
+            NodeJS. I have passion with Javascript, CSS, HTML, while knowing
+            UI/UX and being familiar with MongoDB. I enjoy solving problems,
+            finding solution for better improvement, offering critical thinking
+            and passion with high work ethics.
+          </Typography>
+        </Grid>
+      </Grid>
+    </>
   );
 };
 

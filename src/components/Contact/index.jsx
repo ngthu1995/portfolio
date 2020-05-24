@@ -1,11 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
-import { Box, Button, Grid, Paper, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Typography,
+  Snackbar,
+} from "@material-ui/core";
 import { Formik, connect, Form } from "formik";
 import * as Yup from "yup";
 
 import MyTextField from "../ultils/TextField";
 import { useStyles } from "./styles";
+
+const templateId = "template_4YoLrC1N";
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -26,14 +35,56 @@ const initialValues = {
   message: "",
 };
 
+const defaultState = {
+  isOpen: false,
+  message: "",
+  error: false,
+  success: false,
+};
+
 const ContactForm = connect(
-  ({ formik: { values, isValid, errors, resetForm } }) => {
-    console.log("errors", errors);
-    console.log("isValid", isValid);
+  ({ formik: { values, isValid, resetForm, setTouched } }) => {
     const classes = useStyles();
 
-    // pass validation
-    // prevent submit twice
+    const [eventState, setEventState] = useState(defaultState);
+
+    const onSubmit = async (content = {}) => {
+      const { firstName, lastName, email, message } = content;
+      await onSendFeedback(templateId, {
+        to_name: "Thu Nguyen",
+        message_html: message,
+        from_name: firstName.concat(" ", lastName),
+        reply_to: email,
+      });
+
+      resetForm({});
+
+      setTouched({ firstName: false });
+    };
+
+    const setSnackBar = (type, message) => {
+      setEventState({
+        ...eventState,
+        isOpen: true,
+        [type]: !eventState[type],
+        message,
+      });
+    };
+
+    const onSendFeedback = (templateId, content) => {
+      window.emailjs
+        .send("ngthu1995_gmail_com", templateId, content)
+        .then(() => {
+          setSnackBar("success", "Thank you for reaching out!");
+        })
+        .catch((err) => {
+          setSnackBar("error", "Something went wrong. Please try again!");
+        });
+    };
+
+    const onCloseSnackbar = () => {
+      setEventState(defaultState);
+    };
     return (
       <Form id="contact">
         <Paper style={{ padding: "30px 0" }}>
@@ -77,12 +128,12 @@ const ContactForm = connect(
               </Grid>
               <Grid item>
                 <Button
-                  onClick={() => {
-                    console.log(values);
-                    resetForm();
+                  onClick={async () => {
+                    await onSubmit(values);
                   }}
                   disabled={!isValid}
                   color="primary"
+                  type="submit"
                 >
                   Send Message
                 </Button>
@@ -99,10 +150,16 @@ const ContactForm = connect(
                   resume
                 </a>
                 {""} if you are interested.
-                <p> .</p>
               </Typography>
             </Grid>
           </Grid>
+          <Snackbar
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            open={eventState.isOpen}
+            onClose={onCloseSnackbar}
+            message={eventState.message}
+            key={"bottom" + "right"}
+          />
         </Paper>
       </Form>
     );
@@ -114,7 +171,8 @@ const Contact = ({ refs }) => {
     <div ref={refs["Contact"]}>
       <Formik
         validationSchema={ContactSchema}
-        validateOnMount={true}
+        validateOnMount={false}
+        enableReinitialize
         initialValues={initialValues}
       >
         <ContactForm />

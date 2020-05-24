@@ -1,10 +1,7 @@
 import { createContext } from "react";
 
-import {
-  withStyles,
-  MuiThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
+export const primaryColor = "#0ebbc0";
+export const secondaryColor = "#204d74";
 
 export const themes = {
   light: {
@@ -16,8 +13,6 @@ export const themes = {
     background: "#222222",
   },
 };
-
-const muiBaseTheme = createMuiTheme();
 
 export const theme = {
   overrides: {
@@ -42,6 +37,18 @@ export const theme = {
         width: 349,
         ["@media (min-width:780px)"]: {
           width: 349,
+        },
+      },
+    },
+    MuiToolbar: {
+      root: { backgroundColor: "#333" },
+    },
+    MuiLink: {
+      root: {
+        color: "white",
+        "&:hover": {
+          color: primaryColor,
+          textDecoration: "none !important",
         },
       },
     },

@@ -10,12 +10,15 @@ import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+import { theme } from "./components/ultils/Theme";
 import { useStyles } from "./layout";
 
 export const navList = [
-  { id: "Contact", href: "#contact" },
-  { id: "About", href: "#about" },
   { id: "Portfolio", href: "#portfolio" },
+  { id: "About", href: "#about" },
+  { id: "Contact", href: "#contact" },
 ];
 
 const App = () => {
@@ -26,7 +29,6 @@ const App = () => {
     return acc;
   }, {});
 
-  console.log("Header -> refs", refs);
   const handleClick = (id) =>
     refs[id].current.scrollIntoView({
       behavior: "smooth",
@@ -34,19 +36,21 @@ const App = () => {
     });
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Header refs={refs} handleClick={handleClick} />
-      <Banner />
-      <div className={classes.container} ref={refs["Portfolio"]}>
-        <Portfolio />
+    <MuiThemeProvider theme={createMuiTheme(theme)}>
+      <div className={classes.root}>
+        <CssBaseline />
+        <Header refs={refs} handleClick={handleClick} />
+        <Banner />
+        <div className={classes.container} ref={refs["Portfolio"]}>
+          <Portfolio />
+        </div>
+        <div className={classes.container} ref={refs["About"]}>
+          <About />
+        </div>
+        <Contact refs={refs} />
+        <Footer />
       </div>
-      <div className={classes.container} ref={refs["About"]}>
-        <About />
-      </div>
-      <Contact refs={refs} />
-      <Footer />
-    </div>
+    </MuiThemeProvider>
   );
 };
 

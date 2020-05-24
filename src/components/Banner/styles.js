@@ -7,6 +7,6 @@ export const useStyles = makeStyles({
     backgroundAttachment: "scroll",
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    minHeight: "50vh",
+    minHeight: "60vh",
   },
 });

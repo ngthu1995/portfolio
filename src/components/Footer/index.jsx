@@ -1,23 +1,46 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import { Grid, Typography } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBehance,
+  faGithub,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 
-const Footer = ({ classes = {}, refsm, handleClick } = {}) => {
+import { useStyles } from "./styles";
+
+const links = [
+  {
+    icon: faGithub,
+    url: "https://github.com/ngthu1995",
+  },
+  {
+    icon: faLinkedinIn,
+    url: "https://www.linkedin.com/in/thu-nguyen-09221995/",
+  },
+  {
+    icon: faBehance,
+    url: "https://www.behance.net/ngthu1995",
+  },
+];
+
+const Footer = ({ refsm, handleClick } = {}) => {
+  const classes = useStyles();
   return (
-    <footer className={classes.footer}>
+    <footer className={classes.root}>
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Say hi
+        <Grid container direction="row" justify="center" alignItems="center">
+          {links.map(({ icon, url }, index) => (
+            <Grid item key={index} className={classes.icon}>
+              <a href={url} target="_blank" rel="noreferrer">
+                <FontAwesomeIcon icon={icon} size="lg" color="white" />
+              </a>
+            </Grid>
+          ))}
+        </Grid>
+        <Typography variant="caption" align="center" gutterBottom>
+          Copyright © thunguyen.space 2020
         </Typography>
       </Container>
     </footer>

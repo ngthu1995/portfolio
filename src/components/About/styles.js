@@ -7,5 +7,10 @@ export const useStyles = makeStyles({
   },
   text: {
     textAlign: "center",
+    width: "60%",
+  },
+  image: {
+    width: 250,
+    height: 250,
   },
 });

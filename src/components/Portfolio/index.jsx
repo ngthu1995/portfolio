@@ -2,22 +2,15 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
-  CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
-  Button,
   Typography,
   Grid,
   Tabs,
   Tab,
 } from "@material-ui/core";
 
-import {
-  withStyles,
-  MuiThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import { portfolioList } from "./data";
 import CardDialog from "../ultils/Dialog";
@@ -81,6 +74,9 @@ const Portfolio = () => {
           toggleDialog,
         }}
       >
+        <Typography variant="h4" gutterBottom>
+          Portfolio
+        </Typography>
         <Tabs
           value={eventState.portfolioType}
           onChange={handleTabChange}
