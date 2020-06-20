@@ -7,6 +7,8 @@ export const useStyles = makeStyles({
     // margin: "20 auto !important",
     "& img": {
       maxWidth: "100%",
+      display: "block",
+      margin: "auto",
     },
   },
   // ".container": {

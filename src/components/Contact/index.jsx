@@ -44,6 +44,7 @@ const defaultState = {
 
 const ContactForm = connect(
   ({ formik: { values, isValid, resetForm, setTouched } }) => {
+    console.log("isValid", isValid);
     const classes = useStyles();
 
     const [eventState, setEventState] = useState(defaultState);
@@ -87,70 +88,78 @@ const ContactForm = connect(
     };
     return (
       <Form id="contact">
-        <Paper style={{ padding: "30px 0" }}>
-          <Box
-            fontWeight="fontWeightBold"
-            fontSize="h4.fontSize"
-            style={{ textAlign: "left" }}
-            m={2}
-          >
-            Just say Hello!
-          </Box>
-          <Grid container spacing={2} className={classes.root}>
-            <Grid container item xs={12} sm={8} md={8} spacing={2}>
-              <Grid item xs={12} sm={6} md={6}>
-                <MyTextField
-                  required
-                  name="firstName"
-                  type="text"
-                  label="First Name"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={6}>
-                <MyTextField
-                  required
-                  name="lastName"
-                  type="text"
-                  label="Last Name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <MyTextField required name="email" type="text" label="Email" />
-              </Grid>
-              <Grid item xs={12}>
-                <MyTextField
-                  name="message"
-                  type="text"
-                  label="How can I help you?"
-                  multiline
-                  rows={4}
-                />
-              </Grid>
-              <Grid item>
-                <Button
-                  onClick={async () => {
-                    await onSubmit(values);
-                  }}
-                  disabled={!isValid}
-                  color="primary"
-                  type="submit"
-                >
-                  Send Message
-                </Button>
+        <Paper>
+          <Grid container>
+            <Grid
+              item
+              container
+              direction="column"
+              xs={12}
+              sm={6}
+              md={6}
+              style={{ padding: 25 }}
+            >
+              <Box
+                fontWeight="fontWeightBold"
+                fontSize="h4.fontSize"
+                style={{ textAlign: "left" }}
+              >
+                Just say Hello!
+              </Box>
+              <Grid container item spacing={2}>
+                <Grid item xs={12} sm={6} md={6}>
+                  <MyTextField
+                    required
+                    name="firstName"
+                    type="text"
+                    label="First Name"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <MyTextField
+                    required
+                    name="lastName"
+                    type="text"
+                    label="Last Name"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <MyTextField
+                    required
+                    name="email"
+                    type="text"
+                    label="Email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <MyTextField
+                    name="message"
+                    type="text"
+                    label="How can I help you?"
+                    multiline
+                    rows={10}
+                  />
+                </Grid>
+                <Grid item>
+                  <Button
+                    onClick={async () => {
+                      await onSubmit(values);
+                    }}
+                    disabled={!isValid}
+                    color="primary"
+                    type="submit"
+                  >
+                    Send Message
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
-            <Grid container item xs={12} sm={4} md={4}>
-              <Typography variant="body1">
-                Please take a look at my {""}
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="images/ThuNguyen_resume_frontEnd.pdf"
-                >
-                  resume
-                </a>
-                {""} if you are interested.
-              </Typography>
+            <Grid item xs={12} sm={6} md={6}>
+              <img
+                className={classes.img}
+                alt="complex"
+                src="images/contact.jpg"
+              />
             </Grid>
           </Grid>
           <Snackbar
@@ -171,7 +180,7 @@ const Contact = ({ refs }) => {
     <div ref={refs["Contact"]}>
       <Formik
         validationSchema={ContactSchema}
-        validateOnMount={false}
+        validateOnMount={true}
         enableReinitialize
         initialValues={initialValues}
       >

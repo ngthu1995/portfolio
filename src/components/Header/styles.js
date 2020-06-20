@@ -8,6 +8,7 @@ export const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
     flex: 2,
     textAlign: "left",
+    color: "white",
   },
   toolbarSecondary: {
     justifyContent: "space-between",

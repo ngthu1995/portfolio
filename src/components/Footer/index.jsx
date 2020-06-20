@@ -39,7 +39,12 @@ const Footer = ({ refsm, handleClick } = {}) => {
             </Grid>
           ))}
         </Grid>
-        <Typography variant="caption" align="center" gutterBottom>
+        <Typography
+          variant="caption"
+          align="center"
+          gutterBottom
+          style={{ color: "white" }}
+        >
           Copyright © thunguyen.space 2020
         </Typography>
       </Container>

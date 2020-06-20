@@ -1,7 +1,8 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 
 import App from "./App";
+import Error from "../src/components/Error";
 
 import {
   withStyles,
@@ -13,7 +14,7 @@ import { theme } from "./components/ultils/Theme";
 
 const Routes = () => {
   return (
-    <div className="App">
+    <Switch>
       <Route
         exact
         path="/"
@@ -23,9 +24,8 @@ const Routes = () => {
           </MuiThemeProvider>
         )}
       />
-
-      <Route path="/*" component={() => 404} />
-    </div>
+      <Route exact path="/*" component={() => <Error />} />
+    </Switch>
   );
 };
 

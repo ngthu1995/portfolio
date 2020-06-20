@@ -1,11 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 
+import {
+  primaryColor,
+  secondaryColor,
+  red,
+  blue,
+  yellow,
+} from "../ultils/Theme";
+
 export const useStyles = makeStyles({
   root: {
     maxWidth: "100%",
     textAlign: "center",
     padding: "20px 0",
-    backgroundColor: "#0ebbc0",
+    backgroundColor: primaryColor,
   },
   icon: {
     display: "block",
@@ -14,7 +22,10 @@ export const useStyles = makeStyles({
     padding: 10,
     margin: 10,
     borderRadius: "100%",
-    backgroundColor: "black",
+    backgroundColor: secondaryColor,
     textAlign: "center",
+    "&:hover": {
+      backgroundColor: red,
+    },
   },
 });

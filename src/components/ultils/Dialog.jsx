@@ -65,13 +65,11 @@ const CardDialog = ({ isOpen, handleClose }) => {
         </DialogActions>
       </div>
       <DialogContent>
-        <DialogContentText>
-          {map(description, (section, i) =>
-            renderText(section, "subtitle2", i)
-          )}
-          {renderImage(images)}
-          {renderText(footer, "caption")}
-        </DialogContentText>
+        {/* <DialogContentText> */}
+        {map(description, (section, i) => renderText(section, "subtitle2", i))}
+        {renderImage(images)}
+        {renderText(footer, "caption")}
+        {/* </DialogContentText> */}
       </DialogContent>
     </Dialog>
   );

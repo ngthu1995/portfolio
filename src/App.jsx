@@ -39,8 +39,7 @@ const App = () => {
     <MuiThemeProvider theme={createMuiTheme(theme)}>
       <div className={classes.root}>
         <CssBaseline />
-        <Header refs={refs} handleClick={handleClick} />
-        <Banner />
+        <Banner handleClick={handleClick} />
         <div className={classes.container} ref={refs["Portfolio"]}>
           <Portfolio />
         </div>

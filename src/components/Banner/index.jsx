@@ -1,13 +1,16 @@
 import React from "react";
 
-import { Paper } from "@material-ui/core";
-
 import { useStyles } from "./styles";
 
-const Banner = () => {
+import Header from "../Header";
+
+const Banner = ({ handleClick }) => {
   const classes = useStyles();
-  //   return <Paper className={classes.background}></Paper>;
-  return <div className={classes.root}></div>;
+  return (
+    <div className={classes.root}>
+      <Header handleClick={handleClick} />
+    </div>
+  );
 };
 
 export default Banner;

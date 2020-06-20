@@ -33,6 +33,7 @@ const renderCardList = (data = [], classes, toggleDialog) => {
             image={image}
             title={title}
             onClick={() => toggleDialog(true, details)}
+            style={{ cursor: "pointer" }}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">

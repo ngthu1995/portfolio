@@ -1,7 +1,10 @@
 import { createContext } from "react";
 
-export const primaryColor = "#0ebbc0";
-export const secondaryColor = "#204d74";
+export const primaryColor = "#091927";
+export const secondaryColor = "#0ebbc0";
+export const yellow = "#FFD400";
+export const red = "#F05358";
+export const blue = "#62CDF6";
 
 export const themes = {
   light: {
@@ -47,9 +50,65 @@ export const theme = {
       root: {
         color: "white",
         "&:hover": {
-          color: primaryColor,
+          color: secondaryColor,
           textDecoration: "none !important",
         },
+      },
+    },
+    MuiToolbar: {
+      root: {
+        backgroundColor: "#091927",
+      },
+    },
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: "#091927",
+      },
+    },
+    MuiTab: {
+      root: {
+        "&:hover": {
+          color: secondaryColor,
+        },
+      },
+      textColorPrimary: {
+        color: primaryColor,
+        "&$selected": {
+          color: primaryColor,
+        },
+      },
+    },
+    MuiFormLabel: {
+      root: {
+        "&$focused": {
+          color: secondaryColor,
+        },
+      },
+    },
+    MuiTypography: {
+      root: {
+        color: primaryColor,
+      },
+    },
+    MuiButton: {
+      textPrimary: {
+        color: primaryColor,
+        "& :hover": {
+          color: secondaryColor,
+        },
+      },
+    },
+    MuiInput: {
+      underline: {
+        // color: primaryColor,
+        "&:after": {
+          borderBottom: `2px solid ${secondaryColor}`,
+        },
+      },
+    },
+    PrivateTabIndicator: {
+      colorPrimary: {
+        backgroundColor: primaryColor,
       },
     },
   },

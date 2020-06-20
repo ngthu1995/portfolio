@@ -7,7 +7,7 @@ import { useStyles } from "./styles";
 const Header = ({ handleClick } = {}) => {
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar position={"fixed"}>
       <Toolbar className={classes.toolbar} component="nav">
         <Typography
           variant="h6"
@@ -16,7 +16,7 @@ const Header = ({ handleClick } = {}) => {
           align="center"
           noWrap
         >
-          Thu Nguyen
+          <Link>Thu Nguyen</Link>
         </Typography>
 
         {navList.map(({ id, href }) => (
