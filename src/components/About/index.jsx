@@ -27,13 +27,14 @@ const About = () => {
         </Grid>
         <Grid item className={classes.text}>
           <Typography variant="body1">
-            Hi, I am Tina, a web developer with background of 5 years experience
-            in design interested in web development. I have some experience
-            building graphic intensive web applications using ReactJS and
-            NodeJS. I have passion with Javascript, CSS, HTML, while knowing
-            UI/UX and being familiar with MongoDB. I enjoy solving problems,
-            finding solution for better improvement, offering critical thinking
-            and passion with high work ethics.
+            Hi, I am Tina, a 2-year-developer with background of 6 years
+            experience in design. I write data migration, build reusable code
+            and libraries, graphic intensive web applications, develop new
+            user-facing features and functionalities with user experience in
+            mind. ReactJS, NodeJS, Javascript and GraphQL are my best friends,
+            Google is my best teacher. I enjoy solving problems, finding
+            solution for better improvement, offering critical thinking and
+            passion with high work ethics.
           </Typography>
         </Grid>
       </Grid>

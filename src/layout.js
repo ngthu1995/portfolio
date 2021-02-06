@@ -6,6 +6,7 @@ export const useStyles = makeStyles({
     overflowX: "hidden",
     overflowY: "hidden",
     textAlign: "center",
+    backgroundColor: "#F4F3F0",
     "& .error": {
       textAlign: "left",
     },

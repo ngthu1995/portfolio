@@ -11,7 +11,7 @@ import {
 import { Formik, connect, Form } from "formik";
 import * as Yup from "yup";
 
-import MyTextField from "../ultils/TextField";
+import MyTextField from "../utils/TextField";
 import { useStyles } from "./styles";
 
 const templateId = "template_4YoLrC1N";
@@ -44,7 +44,6 @@ const defaultState = {
 
 const ContactForm = connect(
   ({ formik: { values, isValid, resetForm, setTouched } }) => {
-    console.log("isValid", isValid);
     const classes = useStyles();
 
     const [eventState, setEventState] = useState(defaultState);

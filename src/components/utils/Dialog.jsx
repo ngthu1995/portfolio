@@ -5,10 +5,9 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
-  DialogActions,
-  Grid,
   Typography,
+  Grid,
+  DialogActions,
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -18,10 +17,32 @@ import { useStyles } from "./styles";
 import { map } from "lodash";
 import { PortfolioContext } from "../Portfolio/Context";
 
-const renderText = (section = "", variant = "body1", i) => {
+const renderURL = ({ anchorText = "", link }, i) => {
   return (
-    <Typography variant={variant} key={i}>
-      {section}
+    <a
+      target="_blank"
+      rel="norefferer noopener"
+      href={link}
+      key={i}
+      style={{ color: "blue !important", textDecoration: "none" }}
+    >
+      {anchorText}
+    </a>
+  );
+};
+
+const renderText = (section = "", variant = "body2", i, style) => {
+  let textLine = section;
+  if (typeof section !== "string") {
+    textLine = section.map((item, i) => {
+      return typeof item === "string"
+        ? renderText(item, "subtitle2", i, { display: "inline-block" })
+        : renderURL(item, i);
+    });
+  }
+  return (
+    <Typography variant={variant} key={i} style={style} component="div">
+      {textLine}
     </Typography>
   );
 };
@@ -29,7 +50,7 @@ const renderText = (section = "", variant = "body1", i) => {
 const renderImage = (images = []) => {
   return images.map(({ url, title }, i) => (
     <Grid item key={i}>
-      <img src={url} alt={title} classes />
+      <img src={url} alt={title} />
     </Grid>
   ));
 };
@@ -53,10 +74,15 @@ const CardDialog = ({ isOpen, handleClose }) => {
       aria-labelledby="form-dialog-title"
       className={classes.root}
     >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <DialogTitle id="form-dialog-title">
-          {renderText(title, "h5")}
-          {renderText(subtitle, "subtitle1")}
+          <div>{renderText(title, "body1", 0)}</div>
+          <div>{renderText(subtitle, "subtitle1", 0)}</div>
         </DialogTitle>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
@@ -65,11 +91,11 @@ const CardDialog = ({ isOpen, handleClose }) => {
         </DialogActions>
       </div>
       <DialogContent>
-        {/* <DialogContentText> */}
-        {map(description, (section, i) => renderText(section, "subtitle2", i))}
-        {renderImage(images)}
+        {map(description, (section, i) =>
+          renderText(section, "subtitle2", i, { padding: 5 })
+        )}
+        <div style={{ margin: 15, padding: 30 }}> {renderImage(images)} </div>
         {renderText(footer, "caption")}
-        {/* </DialogContentText> */}
       </DialogContent>
     </Dialog>
   );

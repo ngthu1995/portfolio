@@ -10,7 +10,7 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 
-import { theme } from "./components/ultils/Theme";
+import { theme } from "./components/utils/Theme";
 
 const Routes = () => {
   return (

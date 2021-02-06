@@ -10,8 +10,20 @@ export const portfolioList = [
       subtitle: "MERN Stack",
       description: [
         "Got milk? Got local? Troo, a local dairy shop built with MERN Stack, is here to offer you the best quality products with local prices. We also partner with other goodies in order to make your shopping experience better than never.",
-        "Inspired by Coding Revolution, Troo is a shopping cart application with RESTful API from Postman, ultizing React and Redux as front end and Mongoose as server. However, I added some custom for drop downs feature, hoc components, Mocha testing and UX/UI to suit my taste.",
-        "Check out my live site and code page !",
+        "Inspired by Coding Revolution, Troo is a shopping cart application with RESTful API from Postman, ultizing React and Redux as front end and Mongoose as server. I also added some custom for drop downs feature, hoc components, Mocha testing and UX/UI to suit my taste.",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://hidden-falls-31883.herokuapp.com/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/troo",
+          },
+          "!",
+        ],
       ],
       footer: "Date: 2019",
       images: [
@@ -31,7 +43,19 @@ export const portfolioList = [
       subtitle: "Node.js + Express",
       description: [
         "Inpired by Andrew Mead's tutorial, a weather app fetching real-time weather using data from mapbox.com and darksky.net, along with Node.js and Express library. All users are able to see the real-time weather of specific location they search, including summary data, precipitation, wind speed, lowest and highest temperature of the day. I fetched more data, boiled it down to simple, attention-grabbing visualization, secured the responsive app with Jasmine tests.",
-        "Check out my live site and code page !",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://ngthu1995-weather-app.herokuapp.com/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/weather-app",
+          },
+          "!",
+        ],
       ],
       footer: "Date: 2019",
       images: [
@@ -51,7 +75,19 @@ export const portfolioList = [
       subtitle: "React.js",
       description: [
         "A simple audio player application built with React demonstrates the user ability of listening a song based on existing tracks.",
-        "Check out my live site and code page !",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://ngthu1995-jams.herokuapp.com/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/bloc-jams-react",
+          },
+          "!",
+        ],
       ],
       footer: "Date: 2019",
       images: [
@@ -74,7 +110,19 @@ export const portfolioList = [
         "Timer: A timer displaying the number of minutes and seconds that have elapsed. The timer is stopped when the player wins the game.",
         "Star Rating: From 1 to 3 stars are displayed to provide the player with a visual indication of his or her performance.",
         "Move Counter: Displays the number of turns the player has taken, starting with one at the first turn.",
-        "Check out my live site and code page !",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://ngthu1995-match.herokuapp.com/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/match",
+          },
+          "!",
+        ],
       ],
       footer: "Date: 2019",
       images: [
@@ -93,7 +141,19 @@ export const portfolioList = [
       subtitle: "Node.js + Postgres",
       description: [
         "Applied what I learned from course material, Wikipedia-clone allows users to create, collaborate, and share wikis using Node.js along with Sequelize, Postgres. I implemented additional features such as email sending and user authentication, membership upgrad option using middleware like b-crypt, stripe, sendgrid.",
-        "Check out my live site and code page !",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://ngthu1995-bloccit.herokuapp.com/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/blocipedia-node",
+          },
+          "!",
+        ],
       ],
       footer: "Date: 2019",
       images: [

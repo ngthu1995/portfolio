@@ -13,9 +13,9 @@ import {
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import { portfolioList } from "./data";
-import CardDialog from "../ultils/Dialog";
+import CardDialog from "../utils/Dialog";
 import { PortfolioContext } from "./Context";
-import { theme } from "../ultils/Theme";
+import { theme } from "../utils/Theme";
 
 import { isEmpty } from "lodash";
 

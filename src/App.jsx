@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import { theme } from "./components/ultils/Theme";
+import { theme } from "./components/utils/Theme";
 import { useStyles } from "./layout";
 
 export const navList = [

@@ -6,7 +6,7 @@ import {
   red,
   blue,
   yellow,
-} from "../ultils/Theme";
+} from "../utils/Theme";
 
 export const useStyles = makeStyles({
   root: {
