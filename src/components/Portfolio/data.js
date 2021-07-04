@@ -167,10 +167,37 @@ export const portfolioList = [
   {
     id: 6,
     type: "developer",
-    title: "Virtual pet",
-    subtitle: "MERNs",
-    image: "images/coming_soon.jpg",
-    details: {},
+    title: "Neko Fuko",
+    subtitle: "ReactJS - Group Project",
+    image: "images/NekoFuko/Nekofuko-4.png",
+    details: {
+      title: "NEKO FUKO",
+      subtitle: "ReactJS",
+      description: [
+        "A collaborative project that I had a chance to work with Marc from Chingu to allow users to interact with their special, unique, one-of-a-kind foodie kittens.",
+        "Select a pet from the list of 8 kawaii kitties. You will then be directed to the Care page where you will be able to play with the cat or feed it with items from the Pet Store. You can keep track of your credits, and the cat's happiness and weight values. You can also gain credits by playing a special matching game. This application is responsive, user-friendly and pet friendly.",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://chingu-voyages.github.io/v10-geckos-team-02/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/chingu-voyages/v10-geckos-team-02",
+          },
+          "!",
+        ],
+      ],
+      footer: "Date: 2019",
+      images: [
+        {
+          url: "images/NekoFuko/Nekofuko-1.png",
+          title: "website demo screenshot",
+        },
+      ],
+    },
   },
   {
     id: 7,
