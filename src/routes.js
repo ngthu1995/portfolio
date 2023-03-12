@@ -24,7 +24,7 @@ const Routes = () => {
           </MuiThemeProvider>
         )}
       />
-      <Route exact path="/*" component={() => <Error />} />
+      {/* <Route exact path="/*" component={() => <Error />} /> */}
     </Switch>
   );
 };
