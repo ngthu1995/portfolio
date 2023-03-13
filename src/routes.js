@@ -17,7 +17,7 @@ const Routes = () => {
     <Switch>
       <Route
         exact
-        path="/"
+        path="/portfolio"
         component={() => (
           <MuiThemeProvider theme={createMuiTheme(theme)}>
             <App />

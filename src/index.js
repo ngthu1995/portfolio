@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import Routes from "./routes";
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <Routes />
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
