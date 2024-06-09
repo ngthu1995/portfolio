@@ -1,12 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-import {
-  primaryColor,
-  secondaryColor,
-  red,
-  blue,
-  yellow,
-} from "../utils/Theme";
+import { primaryColor, secondaryColor, red } from "../utils/Theme";
 
 export const useStyles = makeStyles({
   root: {

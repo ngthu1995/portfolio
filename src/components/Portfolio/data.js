@@ -13,11 +13,11 @@ export const portfolioList = [
         "Inspired by Coding Revolution, Troo is a shopping cart application with RESTful API from Postman, ultizing React and Redux as front end and Mongoose as server. I also added some custom for drop downs feature, hoc components, Mocha testing and UX/UI to suit my taste.",
         [
           "Check out my",
-          {
-            anchorText: " live site ",
-            link: "https://hidden-falls-31883.herokuapp.com/",
-          },
-          "and",
+          // {
+          //   anchorText: " live site ",
+          //   link: "https://hidden-falls-31883.herokuapp.com/",
+          // },
+          // "and",
           {
             anchorText: " code page ",
             link: "https://github.com/ngthu1995/troo",
@@ -45,11 +45,11 @@ export const portfolioList = [
         "Inpired by Andrew Mead's tutorial, a weather app fetching real-time weather using data from mapbox.com and darksky.net, along with Node.js and Express library. All users are able to see the real-time weather of specific location they search, including summary data, precipitation, wind speed, lowest and highest temperature of the day. I fetched more data, boiled it down to simple, attention-grabbing visualization, secured the responsive app with Jasmine tests.",
         [
           "Check out my",
-          {
-            anchorText: " live site ",
-            link: "https://ngthu1995-weather-app.herokuapp.com/",
-          },
-          "and",
+          // {
+          //   anchorText: " live site ",
+          //   link: "https://ngthu1995-weather-app.herokuapp.com/",
+          // },
+          // "and",
           {
             anchorText: " code page ",
             link: "https://github.com/ngthu1995/weather-app",
@@ -79,7 +79,7 @@ export const portfolioList = [
           "Check out my",
           {
             anchorText: " live site ",
-            link: "https://ngthu1995-jams.herokuapp.com/",
+            link: "https://ngthu1995.github.io/bloc-jams-react/",
           },
           "and",
           {
@@ -89,7 +89,7 @@ export const portfolioList = [
           "!",
         ],
       ],
-      footer: "Date: 2019",
+      footer: "Date: 2023",
       images: [
         { url: "images/Jam/Jam-1.png", title: "music website screenshot" },
         { url: "images/Jam/Jam-2.png", title: "music website demo" },
@@ -114,7 +114,7 @@ export const portfolioList = [
           "Check out my",
           {
             anchorText: " live site ",
-            link: "https://ngthu1995-match.herokuapp.com/",
+            link: "https://ngthu1995.github.io/match/",
           },
           "and",
           {
@@ -143,11 +143,11 @@ export const portfolioList = [
         "Applied what I learned from course material, Wikipedia-clone allows users to create, collaborate, and share wikis using Node.js along with Sequelize, Postgres. I implemented additional features such as email sending and user authentication, membership upgrad option using middleware like b-crypt, stripe, sendgrid.",
         [
           "Check out my",
-          {
-            anchorText: " live site ",
-            link: "https://ngthu1995-bloccit.herokuapp.com/",
-          },
-          "and",
+          // {
+          //   anchorText: " live site ",
+          //   link: "https://ngthu1995-bloccit.herokuapp.com/",
+          // },
+          // "and",
           {
             anchorText: " code page ",
             link: "https://github.com/ngthu1995/blocipedia-node",
@@ -448,5 +448,59 @@ export const portfolioList = [
         },
       ],
     },
+  },
+  {
+    id: 13,
+    type: "developer",
+    title: "Tic-tac-toe Valentine",
+    subtitle: "ReactJS - Happy Hour Project",
+    image: "images/Tic-Tac-Toe/Tic-preview.jpg",
+    details: {
+      title: "TIC-TAC-TOE VALENTINE",
+      subtitle: "ReactJS - Happy Hour Project",
+      description: [
+        "Fully funtional Tic-tac-toe with a twist challenging your coding knowledge about JS, GraphQL and Valentines trivia. The objective is simple: be the first to get five of your markers in a row, either horizontally, vertically, or diagonally. Each move includes a question, and a correct answer earns the player one spin. Each spin grants an ingredient, worth one point. When a player collects enough ingredients, they unlock special, popular Valentine dishes, which are worth bonus points. The ultimate winner is the player with the most points at the end.",
+        [
+          "Check out my",
+          {
+            anchorText: " live site ",
+            link: "https://ngthu1995.github.io/tic-tac-toe-valentine/",
+          },
+          "and",
+          {
+            anchorText: " code page ",
+            link: "https://github.com/ngthu1995/tic-tac-toe-valentine",
+          },
+          "!",
+        ],
+      ],
+      footer: "Date: 2024",
+      images: [
+        {
+          url: "images/Tic-Tac-Toe/Tic-1.png",
+          title: "website demo screenshot",
+        },
+        {
+          url: "images/Tic-Tac-Toe/Tic-2.png",
+          title: "website demo screenshot",
+        },
+      ],
+    },
+  },
+  {
+    id: 14,
+    type: "developer",
+    title: "Platform",
+    subtitle: "MERNs",
+    image: "images/coming_soon.jpg",
+    details: {},
+  },
+  {
+    id: 15,
+    type: "developer",
+    title: "Virtual meeting",
+    subtitle: "MERNs",
+    image: "images/coming_soon.jpg",
+    details: {},
   },
 ];

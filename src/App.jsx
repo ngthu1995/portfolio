@@ -3,7 +3,6 @@ import "./layout.js";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Header from "./components/Header";
 import About from "./components/About";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";

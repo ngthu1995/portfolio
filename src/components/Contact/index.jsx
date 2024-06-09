@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 
-import {
-  Box,
-  Button,
-  Grid,
-  Paper,
-  Typography,
-  Snackbar,
-} from "@material-ui/core";
+import { Box, Button, Grid, Paper, Snackbar } from "@material-ui/core";
 import { Formik, connect, Form } from "formik";
 import * as Yup from "yup";
 
 import MyTextField from "../utils/TextField";
 import { useStyles } from "./styles";
 
-const templateId = "template_4YoLrC1N";
+const templateId = process.env.REACT_APP_TEMPLATE_ID;
+const serviceId = process.env.REACT_APP_SERVICE_ID;
+const userId = process.env.REACT_APP_USER_ID;
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -25,7 +20,9 @@ const ContactSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(30, "Too Long!")
     .required("Last name is required."),
-  email: Yup.string().email("Invalid email").required("Email is required."),
+  email: Yup.string()
+    .email("Invalid email")
+    .required("Email is required."),
 });
 
 const initialValues = {
@@ -52,7 +49,7 @@ const ContactForm = connect(
       const { firstName, lastName, email, message } = content;
       await onSendFeedback(templateId, {
         to_name: "Thu Nguyen",
-        message_html: message,
+        message: message,
         from_name: firstName.concat(" ", lastName),
         reply_to: email,
       });
@@ -73,7 +70,7 @@ const ContactForm = connect(
 
     const onSendFeedback = (templateId, content) => {
       window.emailjs
-        .send("ngthu1995_gmail_com", templateId, content)
+        .send(serviceId, templateId, content, userId)
         .then(() => {
           setSnackBar("success", "Thank you for reaching out!");
         })

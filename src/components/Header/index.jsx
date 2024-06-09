@@ -21,7 +21,7 @@ const Header = ({ handleClick } = {}) => {
 
         {navList.map(({ id, href }) => (
           <Link
-            href={href}
+            href={`#${href}`}
             key={id}
             onClick={() => handleClick(id)}
             className={classes.toolbarLink}
